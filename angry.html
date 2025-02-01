@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผิดแล้ว!</title>
+    <style>
+        body {
+            background-color: red;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .btn {
+            background: white;
+            color: red;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>น้องพุง! 😡</h1>
+    <button class="btn" onclick="goBack()">กลับไปลองใหม่</button>
+
+    <script>
+        function goBack() {
+            window.location.href = "page2.html"; // กลับไปเลือกใหม่
+        }
+    </script>
+
+</body>
+</html>

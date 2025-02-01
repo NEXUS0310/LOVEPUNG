@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title> <!-- เปลี่ยนชื่อแท็บ -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+        body {
+            background-image: url('3.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Itim', cursive;
+        }
+
+        .text-box {
+            background: #FFDEAD;
+            color: black;
+            padding: 15px 30px;
+            margin: 70px 0; /* ระยะห่างของช้อยส์ */
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 30px; /* ทำให้มุมโค้งมากขึ้น */
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+            min-width: 200px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+            cursor: pointer;
+        }
+
+        .text-box:hover {
+            background: white;
+            color: black;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-box">Picture</div>
+    <a href="time.html" class="text-box">Time</a>
+    <div class="text-box">Message</div>
+
+</body>
+</html>

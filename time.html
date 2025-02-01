@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Counter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+        body {
+            background-image: url('time.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            font-family: 'Itim', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: black;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .time-box {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            background: #FFDEAD;
+            color: black;
+            padding: 10px 20px;
+            font-size: 40px;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>เราคบกันมานานแค่ไหนแล้วววว ❤️</h1>
+    <div class="time-box" id="elapsed-time"></div>
+    <div class="time-box" id="countup-values"></div>
+    <a href="page3.html" class="back-button">⭠ Back</a>
+
+    <script>
+        function updateTime() {
+            let startDate = new Date("2021-08-16T00:00:00"); // เปลี่ยนวันที่เริ่มต้นเป็น 16 ส.ค. 2021
+            let now = new Date();
+            
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+            
+            if (days < 0) {
+                months--;
+                let prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+            
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            document.getElementById("elapsed-time").innerText = `${years} ปี ${months} เดือน ${days} วัน`;
+            
+            let elapsed = now - startDate;
+            let totalDays = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+            
+            document.getElementById("countup-values").innerText = `${totalDays} วัน  ${hours} ชั่วโมง  ${minutes} นาที  ${seconds} วินาที`;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
